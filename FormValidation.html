@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <font color="green">
+        <marquee>
+            <h4>
+                <font color="blue">THIS APP'S FUNCTION: </font>This is a form validation App using JavaScript.
+    </font> Adjust it to suit your need. BY: OLADITAN SALIU.
+    </h4>
+    </marquee>
+    </font>
+    <h2 class="title">
+        <font color="black">FORM VALIDATION USING JAVASCRIPT <br>
+            <font size='4'>
+                <font color='blue'>Validation:</font> is an automatic computer check to ensure
+                that the data entered meet a specified criteria. It is also an aspect of software security.
+            </font>
+    </h2>
+
+
+
+    <form autocomplete="off">
+        <br><br><br><b> General Validation:</b> All the fields must be filled before submission and any lowercase letter
+        typed in the form is automatically turned to an
+        uppercase
+        letter.<br><br><br>
+        <font color='brown'><b> Staff ID:</b></font> (This field accepts alphanumeric and more than one word):
+        <input class="input--style-2" type="text" placeholder="Staff ID (e.g. TAR4335)" name="StaffId"
+            style="text-transform:uppercase" onblur="this.value = this.value.toUpperCase();" required />
+        <br /><br />
+
+        <font color='brown'><b> Surname:</b></font> (This field accepts only alphabets and not more than one word):
+        <input class="input--style-2" type="text" placeholder="Surname" name="SurName" style="text-transform:uppercase"
+            onblur="this.value = this.value.toUpperCase();" onkeypress="return /[a-z]/i.test(event.key)" required />
+        <br /><br />
+
+        <font color='brown'><b> First Name:</b></font> (This field accepts only alphabets and not more than one word):
+        <input class="input--style-2" type="text" placeholder="First Name" name="FirstName"
+            style="text-transform:uppercase" onblur="this.value = this.value.toUpperCase();"
+            onkeypress="return /[a-z]/i.test(event.key)" required />
+        <br /><br />
+
+        <font color='brown'><b> Middle Name:</b></font> (This field accepts only alphabets and not more than one word):
+        <input class="input--style-2" type="text" placeholder="Middle Name" name="MiddleName"
+            style="text-transform:uppercase" onblur="this.value = this.value.toUpperCase();"
+            onkeypress="return /[a-z]/i.test(event.key)" required />
+        <br /><br />
+
+        <font color='brown'><b> Age:</b></font> (You must be born between 1980 and 2010). The range can be adjusted:
+        <input type="date" placeholder="Age" name="Age" min="1980-01-01" max="2010-12-31"
+            onkeypress="return /[a-z]/i.test(event.key)" required />
+        <br /><br />
+
+        <font color='brown'><b> Phone Number:</b></font> (Must
+        be up to and not more than 11 digits.):
+        <input class="input--style-2" placeholder="Enter Phone Number" id="Phone" name="Phone" onclick="OnClick1()"
+            onblur="handleChange1()" onkeypress="return onlyNumberKey(event)" minlength="11" maxlength="11" required />
+        <br /><br /><br /><br />
+
+        <p align="center"> <button class="btn btn--radius btn--green" type="submit">
+                Submit
+            </button></p>
+
+    </form>
+
+
+
+
+    <script>
+
+        function handleChange1() {
+            var x = document.getElementById("Cug");
+            if (x.value.length < 11) {
+                //alert("Value must be up to 11, please go back and make it 11.");
+                x.value = "Value must be up to 11";
+                document.getElementById("Cug").style.color = "#ff0000";
+
+            }
+        }
+
+    </script>
+
+
+
+    <script>
+
+        function handleChange2() {
+            var x = document.getElementById("Nin");
+            if (x.value.length < 11) {
+                //alert("Value must be up to 11, please go back and make it 11.");
+                x.value = "Value must be up to 11";
+                document.getElementById("Nin").style.color = "#ff0000";
+
+            }
+        }
+
+    </script>
+
+
+
+    <script>
+
+        function handleChange3() {
+            var x = document.getElementById("Altno");
+            if (x.value.length < 11) {
+                //alert("Value must be up to 11, please go back and make it 11.");
+                x.value = "Value must be at least 11 (one phone number)";
+                document.getElementById("Altno").style.color = "#ff0000";
+
+            }
+        }
+
+    </script>
+
+    <script>
+        function onlyNumberKey(evt) {
+
+            var x = document.getElementById("Phone");
+            if ((x.value.length < 10)) {
+                document.getElementById("Phone").style.color = "#ff0000";
+            }
+
+            else {
+                document.getElementById("Phone").style.color = "#000000";
+            }
+
+
+            var y = document.getElementById("Nin");
+            if ((y.value.length < 10)) {
+                document.getElementById("Nin").style.color = "#ff0000";
+            }
+
+            else {
+                document.getElementById("Nin").style.color = "#000000";
+            }
+
+            // Only ASCII charactar in that range allowed
+            var ASCIICode = (evt.which) ? evt.which : evt.keyCode
+            if (ASCIICode > 31 && (ASCIICode < 48 || ASCIICode > 57))
+                return false;
+            return true;
+
+            function alphaOnly(event) {
+                var key = event.keyCode;
+                return ((key >= 65 && key <= 90) || key == 8);
+            }
+        };
+
+    </script>
+
+    <script>
+        function KeyControl() {
+
+            var z = document.getElementById("Altno");
+            if ((z.value.length < 10)) {
+                document.getElementById("Altno").style.color = "#ff0000";
+            }
+
+            else {
+                document.getElementById("Altno").style.color = "#000000";
+            }
+            469
+        }
+    </script>
+
+
+    <script>
+        $('#contactForm').submit(function () {
+            sendContactForm();
+            return false;
+        });
+    </script>
+
+    <script>
+        function OnClick1() {
+
+            var x = document.getElementById("Cug");
+            if (x.value == "Value must be up to 11") {
+                x.value = ""
+            }
+        }
+
+    </script>
+
+    <script>
+        function OnClick2() {
+
+            var x = document.getElementById("Nin");
+            if (x.value == "Value must be up to 11") {
+                x.value = ""
+            }
+        }
+
+    </script>
+
+
+    <script>
+        function OnClick3() {
+
+            var x = document.getElementById("Altno");
+            if (x.value == "Value must be at least 11 (one phone number)") {
+                x.value = ""
+            }
+        }
+
+    </script>
+
+
+    <script>
+        if (window.history.replaceState) {
+            window.history.replaceState(null, null, window.location.href);
+        }
+    </script>
+</body>
+
+</html>
